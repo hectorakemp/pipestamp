@@ -10,4 +10,12 @@ go build pipestamp.go
 chmod +x pipestamp
 sudo mv pipestamp /usr/local/bin
 ```
+## Example: 
+
+``` sh
+oc logs --tail 2 etcd-x-x-x | pipestamp
+...
+{"level":"info","ts":"53 seconds ago","caller":"etcdserver/server.go:2422","msg":"saved snapshot","snapshot-index":}
+{"level":"info","ts":"53 seconds ago","caller":"etcdserver/server.go:2452","msg":"compacted Raft logs","compact-index":}
+```
 
